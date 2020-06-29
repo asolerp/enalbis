@@ -1,12 +1,11 @@
 <template>
   <div class="logo">
-    <span class="logo__letter logo__letter-white">EN</span>
-    <svg
-      id="logo"
-      width="161.484px"
-      height="324.423px"
-      viewBox="0 0 161.484 324.423"
+    <span
+      v-if="$vuetify.breakpoint.mdAndUp"
+      class="logo__letter logo__letter-white"
+      >EN</span
     >
+    <svg id="compas" viewBox="0 0 161.484 324.423">
       <g>
         <path
           fill="#0E0E0E"
@@ -48,7 +47,10 @@
         />
       </g>
     </svg>
-    <span class="logo__letter logo__letter-black">
+    <span
+      v-if="$vuetify.breakpoint.mdAndUp"
+      class="logo__letter logo__letter-black"
+    >
       LBIS
     </span>
   </div>
@@ -61,21 +63,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#compas {
+  width: 8rem;
+  @include respond(xs) {
+    width: 10rem;
+  }
+}
 .logo {
   display: flex;
   align-items: flex-end;
+  @include respond(xs) {
+    justify-content: center;
+  }
   &__letter {
     font-family: 'Adam';
     font-size: 12rem;
     display: block;
     height: 70%;
+    @include respond(xs) {
+      font-size: 3rem;
+    }
     &-white {
       margin-right: 1.5rem;
       color: white;
+      @include respond(xs) {
+        margin-right: 1rem;
+      }
     }
     &-black {
       color: black;
       margin-left: 1.5rem;
+      @include respond(xs) {
+        margin-left: 1rem;
+      }
     }
   }
 }
