@@ -27,6 +27,14 @@ export default {
     color: white;
     margin-left: 1rem;
     margin-top: 1rem;
+    @include respond(xs) {
+      align-self: flex-end;
+      position: absolute;
+      bottom: 1rem;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+    }
   }
 }
 .mail {
@@ -37,5 +45,9 @@ export default {
   left: -3rem;
   transform: rotate(-90deg);
   font-size: 1.5rem;
+  @include respond(xs) {
+    bottom: 55rem;
+    left: -4rem;
+  }
 }
 </style>
