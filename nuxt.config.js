@@ -27,7 +27,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['./assets/css/styles.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -43,9 +43,13 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/style-resources',
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
   ],
+  styleResources: {
+    scss: ['./assets/sass/main.scss'],
+  },
   /*
    ** Nuxt.js modules
    */

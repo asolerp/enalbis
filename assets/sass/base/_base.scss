@@ -1,0 +1,29 @@
+// required and to get updates
+$cookieconstent-background: rgb(160, 130, 70);
+
+* {-webkit-overflow-scrolling: touch}
+
+html {
+  font-size: 100% !important;
+
+  @include respond(xs) {
+    font-size: 60%;
+  }
+
+  @include respond(sm) {
+    font-size: 60%;
+  }
+
+  @include respond(md) {
+    font-size: 800%;
+  }
+
+  @include respond(lg) {
+    font-size: 80%;
+  }
+
+  @include respond(xl) {
+    font-size: 100%;
+  }
+
+}
