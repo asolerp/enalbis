@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <span
-      v-if="$vuetify.breakpoint.mdAndUp"
+      v-if="reloaded && $vuetify.breakpoint.mdAndUp"
       class="logo__letter logo__letter-white"
       >EN</span
     >
@@ -48,7 +48,7 @@
       </g>
     </svg>
     <span
-      v-if="$vuetify.breakpoint.mdAndUp"
+      v-if="reloaded && $vuetify.breakpoint.mdAndUp"
       class="logo__letter logo__letter-black"
     >
       LBIS
@@ -59,6 +59,14 @@
 <script>
 export default {
   name: 'Logo',
+  data: () => ({
+    reloaded: false,
+  }),
+  created() {
+    this.$nextTick(function () {
+      this.reloaded = true
+    })
+  },
 }
 </script>
 

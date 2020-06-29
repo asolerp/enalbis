@@ -25,12 +25,14 @@ export default {
   height: 100vh;
   &__subtitle {
     color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
     margin-left: 1rem;
     margin-top: 1rem;
     @include respond(xs) {
       align-self: flex-end;
       position: absolute;
-      bottom: 1rem;
+      bottom: 3rem;
       margin: 0 auto;
       text-align: center;
       width: 100%;
@@ -46,7 +48,7 @@ export default {
   transform: rotate(-90deg);
   font-size: 1.5rem;
   @include respond(xs) {
-    bottom: 55rem;
+    bottom: 42rem;
     left: -4rem;
   }
 }
