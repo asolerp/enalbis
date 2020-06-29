@@ -6,11 +6,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-mode
    */
   mode: 'universal',
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
-  target: 'static',
+
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -32,7 +28,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['./assets/css/styles.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -53,7 +49,7 @@ export default {
     '@nuxtjs/vuetify',
   ],
   styleResources: {
-    scss: ['./assets/sass/mian.scss'],
+    scss: ['./assets/sass/main.scss'],
   },
   /*
    ** Nuxt.js modules

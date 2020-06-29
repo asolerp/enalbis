@@ -1,15 +1,13 @@
 <template>
   <v-app>
-    <v-content>
-      <v-container>
+    <v-main>
+      <v-container class="pa-0 ma-0" fluid>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
 <script>
-export default {
-  data() {},
-}
+export default {}
 </script>
