@@ -48,9 +48,13 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/style-resources',
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
   ],
+  styleResources: {
+    scss: ['./assets/sass/mian.scss'],
+  },
   /*
    ** Nuxt.js modules
    */

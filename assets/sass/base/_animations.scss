@@ -1,0 +1,46 @@
+.translateY-enter-active,
+.translateY-leave-active {
+  transition: all 1s;
+}
+.translateY-enter, .translateY-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateY(100%);
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+
+
+.translateX-enter-active,
+.translateX-leave-active {
+  transition: all .3s ease-in-out;
+}
+
+.translateX-enter, .translateX-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+  @include respond(xl) {
+    transform: translateX(30vw);
+  }
+
+  @include respond(lg) {
+    transform: translateX(30vw);
+  }
+
+  @include respond(md) {
+    transform: translateX(30vw);
+  }
+
+  @include respond(sm) {
+    transform: translateX(40vw);
+  }
+  @include respond(xs) {
+    transform: translateX(100vw);
+  }
+
+}
