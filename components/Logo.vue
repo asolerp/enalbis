@@ -3,7 +3,7 @@
     <span
       v-if="reloaded && $vuetify.breakpoint.mdAndUp"
       class="logo__letter logo__letter-white"
-      >EN</span
+      >{{ textLogo.e }}{{ textLogo.n }}</span
     >
     <svg id="compas" viewBox="0 0 161.484 324.423">
       <g>
@@ -51,21 +51,92 @@
       v-if="reloaded && $vuetify.breakpoint.mdAndUp"
       class="logo__letter logo__letter-black"
     >
-      LBIS
+      {{ textLogo.l }}{{ textLogo.b }}{{ textLogo.i }}{{ textLogo.s }}
     </span>
   </div>
 </template>
 
 <script>
+import ABC from '@/utils/abc'
 export default {
   name: 'Logo',
   data: () => ({
+    position: 0,
+    textLogo: {
+      e: 'E',
+      n: 'N',
+      l: 'L',
+      b: 'B',
+      i: 'I',
+      s: 'S',
+    },
     reloaded: false,
   }),
+  watch: {
+    position() {
+      console.log(this.position)
+      if (this.position && this.position === 15) {
+        this.textLogo.e = 'E'
+        this.textLogo.n = 'N'
+        this.textLogo.l = 'L'
+        this.textLogo.b = 'B'
+        this.textLogo.i = 'I'
+        this.textLogo.s = 'S'
+      }
+    },
+  },
+  mounted() {
+    this.ramdomLetter1()
+    // this.randomLetter(this.textLogo.first)
+  },
   created() {
     this.$nextTick(function () {
       this.reloaded = true
     })
+  },
+  methods: {
+    ramdomLetter1() {
+      const promise = new Promise((resolve, reject) => {
+        while (this.position < 15) {
+          ;((i) => {
+            console.log(i)
+            setTimeout(() => {
+              if (this.textLogo)
+                this.textLogo.e =
+                  ABC[Math.floor(Math.random() * ABC.length) + 0]
+              // this.textLogo.n = ABC[Math.floor(Math.random() * ABC.length) + 0]
+              // this.textLogo.l = ABC[Math.floor(Math.random() * ABC.length) + 0]
+              // this.textLogo.b = ABC[Math.floor(Math.random() * ABC.length) + 0]
+              // this.textLogo.i = ABC[Math.floor(Math.random() * ABC.length) + 0]
+              // this.textLogo.s = ABC[Math.floor(Math.random() * ABC.length) + 0]
+            }, 100 * this.position)
+          })(this.position++)
+        }
+
+        // if (/* everything turned out fine */) {
+        //   resolve("Stuff worked!");
+        // }
+        // else {
+        //   reject(Error("It broke"));
+        // }
+        Promise.all([promise]).then(() => console.log('finished!'))
+      })
+    },
+    randomLetter() {
+      while (this.position < 15) {
+        ;((i) => {
+          setTimeout(() => {
+            if (this.textLogo)
+              this.textLogo.e = ABC[Math.floor(Math.random() * ABC.length) + 0]
+            this.textLogo.n = ABC[Math.floor(Math.random() * ABC.length) + 0]
+            this.textLogo.l = ABC[Math.floor(Math.random() * ABC.length) + 0]
+            this.textLogo.b = ABC[Math.floor(Math.random() * ABC.length) + 0]
+            this.textLogo.i = ABC[Math.floor(Math.random() * ABC.length) + 0]
+            this.textLogo.s = ABC[Math.floor(Math.random() * ABC.length) + 0]
+          }, 100 * this.position)
+        })(this.position++)
+      }
+    },
   },
 }
 </script>
